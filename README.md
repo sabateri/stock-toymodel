@@ -14,14 +14,14 @@ This project uses a simple machine learning pipeline in PyTorch to predict **nex
   - ROC curve and Confusion Matrix
 - Visualizes predictions overlaid on candlestick charts
 
-## 📈 Future Improvements
+## Future Improvements
 
 - Backtesting simple trading strategies using model predictions
 - Try LSTM?
 - Enhanced feature engineering (e.g., cross-asset signals)
 - Hyperparameter tuning
 
-## 🚀 Getting Started
+## Getting Started
 
 ```bash
 pip install -r requirements.txt
