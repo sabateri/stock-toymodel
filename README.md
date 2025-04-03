@@ -4,7 +4,7 @@ This project uses a simple machine learning pipeline in PyTorch to predict **nex
 
 The model is clearly overfitting at the moment. This is somewhat expected since the model is too simple and not using enough data.
 
-This project is only for educational purposes.
+This project is for educational purposes only.
 
 ## What It Does
 
