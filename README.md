@@ -9,7 +9,8 @@ This project is for educational purposes only.
 - Downloads historical stock data
 - Calculates features such as:
   - Technical indicators (RSI, MACD, SMA, ATR, etc.)
-- Trains a Neural Network (MLP) to predict forward returns
+- Trains a Neural Network to predict forward returns
+- Uses zipline to backtest the results with historical data
 
 ## Future Improvements
 
