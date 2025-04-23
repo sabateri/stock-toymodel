@@ -6,7 +6,7 @@ This project is for educational purposes only.
 
 ## What It Does
 
-- Downloads historical stock data (e.g., AAPL, MSFT) 
+- Downloads historical stock data
 - Calculates features such as:
   - Technical indicators (RSI, MACD, SMA, ATR, etc.)
 - Trains a Neural Network (MLP) to predict forward returns
