@@ -28,3 +28,10 @@ Since zipline is deprecated, other package versions are needed, to run backtests
 pip install -r requirements_zipline.txt
 ```
 
+The steps to run are
+
+1. ```notebooks/create_datasets.ipynb``` creates the datasets needed
+2. ```notebooks/feature_engineering.ipynb``` engineers features for the model
+3. ```notebooks/optimizing_NN_pytorch.ipynb``` trains NN
+4. ```notebooks/backtest_zipline.ipynb``` backtests using zipline
+
