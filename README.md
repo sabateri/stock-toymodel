@@ -22,3 +22,9 @@ This project is for educational purposes only.
 
 ```bash
 pip install -r requirements.txt
+```
+Since zipline is deprecated, other package versions are needed, to run backtests using zipline-reloaded (a maintained version of zipline) do
+```bash
+pip install -r requirements_zipline.txt
+```
+
