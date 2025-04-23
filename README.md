@@ -1,23 +1,19 @@
 # Stock Price Movement Prediction with PyTorch
 
-This project uses a simple machine learning pipeline in PyTorch to predict **next-day stock price movement** (up or down) based on historical OHLCV data and technical indicators.
-
-The model is clearly overfitting at the moment. This is somewhat expected since the model is too simple and not using enough data.
+This project uses a simple machine learning pipeline in PyTorch to predict 1-day forward returns based on historical data and technical indicators.
 
 This project is for educational purposes only.
 
 ## What It Does
 
-- Downloads historical stock data (e.g., AAPL, MSFT) using `yfinance`
+- Downloads historical stock data (e.g., AAPL, MSFT) 
 - Calculates features such as:
   - Technical indicators (RSI, MACD, SMA, ATR, etc.)
-- Trains a binary classification model (MLP) to predict:
-  - Will the stock price go **up** or **down** the next day?
+- Trains a Neural Network (MLP) to predict forward returns
 
 ## Future Improvements
 
-- Backtesting simple trading strategies using model predictions
-- Try LSTM?
+- Backtesting double-check using backtrader
 - Enhanced feature engineering (e.g., cross-asset signals)
 - Hyperparameter tuning
 
