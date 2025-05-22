@@ -35,20 +35,42 @@ class MultipleTimeSeriesCV:
         self.date_idx = date_idx
 
     def split(self, X, y=None, groups=None):
+        """Generate indices to split data into training and test set.
+        
+        Parameters
+        ----------
+        X : pandas DataFrame
+            Features data, with MultiIndex including date level
+        y : pandas Series, optional
+            Target data
+        groups : object, optional
+            Always ignored, exists for compatibility with sklearn API
+            
+        Yields
+        ------
+        train_idx : ndarray
+            The training set indices for the split.
+        test_idx : ndarray
+            The testing set indices for the split.
+        """
         unique_dates = X.index.get_level_values(self.date_idx).unique()
         days = sorted(unique_dates, reverse=True)
         split_idx = []
         for i in range(self.n_splits):
+            # Calculate indices for test and train periods
             test_end_idx = i * self.test_length
             test_start_idx = test_end_idx + self.test_length
+
+            # Consider lookahead to avoid data leakage
             train_end_idx = test_start_idx + self.lookahead - 1
             train_start_idx = train_end_idx + self.train_length + self.lookahead - 1
             split_idx.append([train_start_idx, train_end_idx,
                               test_start_idx, test_end_idx])
-
+            
+        # Extract date column for filtering
         dates = X.reset_index()[[self.date_idx]]
         for train_start, train_end, test_start, test_end in split_idx:
-
+            # Create train and test indices based on date ranges
             train_idx = dates[(dates[self.date_idx] > days[train_start])
                               & (dates[self.date_idx] <= days[train_end])].index
             test_idx = dates[(dates[self.date_idx] > days[test_start])

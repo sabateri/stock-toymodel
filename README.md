@@ -16,7 +16,7 @@ The following image shows the output of the backtest using zipline, using a simp
 
 ## Getting Started
 
-1. Clone this repository:
+1. Clone this repository (python version 3.11.11):
    ```bash
    git clone https://github.com/sabateri/stock-toymodel.git
    cd stock-toymodel
@@ -27,26 +27,31 @@ The following image shows the output of the backtest using zipline, using a simp
     ```
 
 ### Backtesting
-**Option 1)** [Zipline-reloaded](https://github.com/stefan-jansen/zipline-reloaded.git)
+
+<!-- **Option 1)** [Zipline-reloaded](https://github.com/stefan-jansen/zipline-reloaded.git)
 
 Since zipline is deprecated, other package versions are needed, to run backtests using zipline-reloaded (a maintained version of zipline) do
 ```bash
 pip install -r requirements_zipline.txt
 ```
 
-**Option 2)** [Backtrader](https://www.backtrader.com/)
+**Option 2)** 
+ -->
+We backtest using [Backtrader](https://www.backtrader.com/)
 ```bash
 pip install -r requirements_backtrader.txt
 ```
 
 The steps to run are
 
-1. ```notebooks/create_datasets.ipynb``` creates the datasets needed
-2. ```notebooks/feature_engineering.ipynb``` engineers features for the model
-3. ```notebooks/optimizing_NN_pytorch.ipynb``` trains NN
-4. Backtesting notebooks:  
-   **4a.** `notebooks/backtest_zipline.ipynb` — backtests using Zipline  
-   **4b.** `notebooks/backtest_backtrader.ipynb` — backtests using Backtrader 
+1. Create the dataset and engine features.
+```
+python3 main.py --years 16 --start_date 2009-01-01 --end_date 2025-01-01  --feature-engineer
+```
+2. ```notebooks/optimizing_NN_pytorch.ipynb``` trains NN
+3. Backtesting notebook:  
+   <!-- **4a.** `notebooks/backtest_zipline.ipynb` — backtests using Zipline   -->
+    `notebooks/backtest_backtrader.ipynb` — backtests using Backtrader 
 
 <!--
 ## Data Sources
