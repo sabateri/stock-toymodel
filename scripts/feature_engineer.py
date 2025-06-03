@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -404,6 +406,7 @@ class StockFeatureEngineer:
         
         self.logger.info("Added time features")
         return prices
+
     
     def add_sector_encoding(self, prices: pd.DataFrame, metadata: pd.DataFrame) -> pd.DataFrame:
         """
